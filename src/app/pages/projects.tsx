@@ -95,11 +95,11 @@ const dummyData = [
     image: "/images/urban_image copy.png",
     link: "https://www.urbanpay.in/"
   },
-  // {
-  //   title: "npx shercoder – in your terminal ↵",
-  //   description: "A personalized command-line business card displaying your professional profile, skills, and contact information in the terminal. A unique, tech-savvy way to share your credentials and impress within the developer community.",
-  //   image: "",
-  //   link: ""
-  // },
+  {
+    title: "npx shercoder – in your terminal ↵",
+    description: "A personalized command-line business card displaying your professional profile, skills, and contact information in the terminal. A unique, tech-savvy way to share your credentials and impress within the developer community.",
+    image: "/images/npx-shercoder.png",
+    link: "https://github.com/Jeetcodes95/npx-shercoder"
+  },
   // Add more dummy data objects as needed
 ];
