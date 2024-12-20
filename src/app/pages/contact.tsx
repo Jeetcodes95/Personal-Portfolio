@@ -58,7 +58,7 @@ const ContactForm = () => {
         </a>
         </div>
 
-        <div className="text-sm pt-60 sm:mt-20 font-extralight text-center relative z-20 text-gray-400 max-w-7xl pb-8">
+        <div className="text-sm pt-60 sm:mt-20 font-extralight text-center relative z-20 text-gray-200 max-w-7xl pb-8">
           Always be inspired! | © Jeetendra Kumar Barman (shercoder)
         </div>
     </div>

@@ -9,6 +9,7 @@ import ContactForm from "./pages/contact";
 
 import ReactGA from "react-ga4";
 import { useEffect } from "react";
+import TawkToWidget from '@/components/TawkToWidget';
 
 
 const Home = () => {
@@ -27,6 +28,16 @@ const Home = () => {
       <ThreeDCard />
       {/* <Article /> */}
       <ContactForm />
+      <div
+        style={{
+          position: "fixed",
+          bottom: "20px",
+          right: "20px",
+          zIndex: 1000,
+        }}
+      >
+        <TawkToWidget/>
+      </div>
     </>
   );
 }

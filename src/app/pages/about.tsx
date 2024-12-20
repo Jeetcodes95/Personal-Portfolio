@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 
 interface Skill {
   src: string;
@@ -41,13 +41,14 @@ const deploykills: Skill[] = [
   { src: "/static/ec2.svg", alt: "AWS icon", gradient: "from-orange-300 to-gray-100", text: "AWS EC2" },
   { src: "/static/cicd.svg", alt: "CICD icon", gradient: "from-gray-100 to-gray-100", text: "CICD Pipelines" },
   { src: "/static/vrsl.svg", alt: "Vercel icon", gradient: "from-gray-300 to-gray-100", text: "Vercel" },
-  // { src: "/static/onr.svg", alt: "Onrender icon", gradient: "from-gray-300 to-gray-100", text: "Onrender" },
+  { src: "/static/netlify.png", alt: "Netlify icon", gradient: "from-gray-300 to-gray-100", text: "Netlify" },
+  { src: "/static/render.png", alt: "Onrender icon", gradient: "from-gray-300 to-gray-100", text: "Onrender" },
 ];
 
 
 const SkillDiv: React.FC<Skill> = ({ src, alt, gradient, text }) => (
   <div className="relative inline-flex md:h-10 overflow-hidden rounded-full p-[1px] focus:outline-none focus:ring-2 focus:ring-slate-400 focus:ring-offset-2 focus:ring-offset-slate-50 mb-2 mr-2">
-    <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" />
+    {/* <span className="absolute inset-[-1000%] animate-[spin_2s_linear_infinite] bg-[conic-gradient(from_90deg_at_50%_50%,#E2CBFF_0%,#393BB2_50%,#E2CBFF_100%)]" /> */}
     <span className="inline-flex h-full w-full cursor-pointer items-center justify-center rounded-full bg-slate-950 px-3 py-1 text-sm font-medium text-white backdrop-blur-3xl">
       <img className="w-7" src={src} alt={alt} />&nbsp;
       <span className={`whitespace-nowrap bg-gradient-to-r ${gradient} voil text-transparent bg-clip-text font-normal md:text-xl`}>{text}</span>
@@ -55,18 +56,127 @@ const SkillDiv: React.FC<Skill> = ({ src, alt, gradient, text }) => (
   </div>
 );
 
+
+
 const About: React.FC = () => {
+  const [activeTab, setActiveTab] = useState(0);
+
+  const tabs = [
+    {
+      label: "Frontend Technologies",
+      content: (
+        <>
+          <span className="whitespace-nowrap text-white font-light mb-2 tracking-widest">
+            Frontend Technologies →
+          </span>
+          <hr className="my-4" />
+          {skills.map((skill) => (
+            <SkillDiv key={skill.text} {...skill} />
+          ))}
+        </>
+      ),
+    },
+    {
+      label: "Backend Technologies",
+      content: (
+        <>
+          <span className="whitespace-nowrap text-white font-light mb-2 tracking-widest">
+            Backend Technologies →
+          </span>
+          <hr className="my-4" />
+          {backendskills.map((skill) => (
+            <SkillDiv key={skill.text} {...skill} />
+          ))}
+        </>
+      ),
+    },
+    {
+      label: "Development & Productivity",
+      content: (
+        <>
+          <span className="whitespace-nowrap text-white font-light mb-2 tracking-widest">
+            Development & Productivity →
+          </span>
+          <hr className="my-4" />
+          {devskills.map((skill) => (
+            <SkillDiv key={skill.text} {...skill} />
+          ))}
+        </>
+      ),
+    },
+    {
+      label: "Deployment",
+      content: (
+        <>
+          <span className="whitespace-nowrap text-white font-light mb-2 tracking-widest">
+            Deployment →
+          </span>
+          <hr className="my-4" />
+          {deploykills.map((skill) => (
+            <SkillDiv key={skill.text} {...skill} />
+          ))}
+        </>
+      ),
+    },
+  ];
+
   return (
     <div className="max-w-7xl mx-auto px-4 ">
       <div className="px-4">
         <h2 className="md:text-4xl text-2xl lg:text-4xl font-bold text-left pb-12 xl:pl-0 lg:mb-0 sm:mb-0 ">About me</h2>
       </div>
       <h3 className="md:text-xl text-sm lg:text-xl font-extralight text-left relative z-20 text-gray-400 max-w-7xl pb-8 lg:mb-4 pl-4">
-        Hello, I&apos;m Jeetendra Kumar Barman. I am an aspiring <b>MERN Stack Developer</b> with <b className="bg-gradient-to-r from-purple-600 to-gray-400 text-transparent bg-clip-text font-medium">1+ year</b> of experience.
+        Hello, I&apos;m Jeetendra Kumar Barman. I am an passionate <b>MERN Stack Developer</b> with <b className="bg-gradient-to-r from-purple-600 to-gray-400 text-transparent bg-clip-text font-medium">2+ year</b> of experience.
         <br /><br />
         I specialize in crafting <b>Web Applications</b> and <b>Product Management</b>.
         <br /><br />
-        <div className="break-words whitespace-normal">
+        <div className="relative mx-auto mt-10 p-8 max-w-4xl h-[600px] sm:h-[400px] bg-blue-400 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-30 border border-gray-100 shadow-lg rounded-lg bg-[url('/images/coding.avif')] bg-cover bg-center ">
+  {/* Glassmorphism Effect Inner Div */}
+  <div className="flex items-center justify-between mb-6">
+    {/* Left Arrow */}
+    <button
+      className="hidden sm:block px-2 py-1 text-gray-300 hover:text-white"
+      onClick={() => setActiveTab((prev) => (prev === 0 ? tabs.length - 1 : prev - 1))}
+    >
+      &lt;
+    </button>
+
+    {/* Tab Buttons - Make them scrollable and nowrap */}
+    <div className=" justify-center space-x-4 overflow-x-auto whitespace-nowrap scrollbar-none">
+      {tabs.map((tab, index) => (
+        <button
+          key={index}
+          className={`px-4 py-2 text-lg font-normal  scrollbar-none  rounded-md transition-colors ${
+            activeTab === index
+              ? "bg-white backdrop-blur-md bg-opacity-20 text-white shadow-md"
+              : "bg-transparent  text-gray-300 hover:text-white"
+          }`}
+          onClick={() => setActiveTab(index)}
+        >
+          {tab.label}
+        </button>
+      ))}
+    </div>
+
+    {/* Right Arrow */}
+    <button
+      className="hidden sm:block px-2 py-1 text-gray-300 hover:text-white"
+      onClick={() => setActiveTab((prev) => (prev === tabs.length - 1 ? 0 : prev + 1))}
+    >
+      &gt;
+    </button>
+  </div>
+
+  <div className="relative z-10 bg-blue-100 bg-opacity-20 backdrop-filter backdrop-blur-md rounded-lg p-6 overflow-auto">
+    {/* Active Tab Content */}
+    <div className="text-gray-200">
+      {tabs[activeTab].content}
+    </div>
+  </div>
+</div>
+
+
+        {/* <div className="break-words whitespace-normal">
           <span className="whitespace-nowrap">Proficient in:</span>&nbsp;
           <br />
           <br />
@@ -107,9 +217,9 @@ const About: React.FC = () => {
           {deploykills.map(skill => (
             <SkillDiv key={skill.text} {...skill} />
           ))}
-        </div>
+        </div> */}
         <br /><br />
-        Currently, I am part of the dynamic team at <b>Fast  Credit Deal</b>, a Delhi-based company known for its innovative solutions.
+        Currently, I am part of the dynamic team at <a  href="https://www.adymize.com/" className=" bg-gradient-to-r from-blue-600 to-gray-300 text-transparent bg-clip-text font-bold" >Adymize Private Limited</a>, a Bhopal based company known for its innovative solutions.
         <br /><br />
         With a passion for innovation and a track record of delivering impactful solutions, I am committed to pushing boundaries and driving success in every project I undertake.
       </h3>
