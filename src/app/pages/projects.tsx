@@ -10,7 +10,7 @@ import { ButtonsCard } from "@/components/ui/tailwindcss-buttons";
 
 const ThreeDCard = () => {
   return (
-    <div className="max-w-7xl mx-auto px-4 mt-20">
+    <div className="max-w-7xl mx-auto px-4 mt-20 bg-black">
         <div className="px-4">
             <h2 className="md:text-4xl text-2xl lg:text-4xl font-bold text-left pb-12 xl:pl-0 lg:mb-0 sm:mb-0">Projects</h2>
         </div>

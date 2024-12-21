@@ -5,7 +5,7 @@ import Typewriter from 'typewriter-effect';
 
 export default function HomeScreen() {
   return (
-    <div className="h-screen">
+    <div className="h-screen bg-black">
    {/* home screen */}
    <Footer />
 
