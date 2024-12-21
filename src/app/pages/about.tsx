@@ -126,7 +126,7 @@ const About: React.FC = () => {
         <h2 className="md:text-4xl text-2xl lg:text-4xl font-bold text-left pb-12 xl:pl-0 lg:mb-0 sm:mb-0 ">About me</h2>
       </div>
       <h3 className="md:text-xl text-sm lg:text-xl font-extralight text-left relative z-20 text-gray-400 max-w-7xl pb-8 lg:mb-4 pl-4">
-        Hello, I&apos;m Jeetendra Kumar Barman. I am an passionate <b>MERN Stack Developer</b> with <b className="bg-gradient-to-r from-purple-600 to-gray-400 text-transparent bg-clip-text font-medium">2+ year</b> of experience.
+        Hello, I&apos;m Jeetendra Kumar Barman. I am a passionate <b>MERN Stack Developer</b> with <b className="bg-gradient-to-r from-purple-600 to-gray-400 text-transparent bg-clip-text font-medium">2+ year</b> of experience.
         <br /><br />
         I specialize in crafting <b>Web Applications</b> and <b>Product Management</b>.
         <br /><br />
